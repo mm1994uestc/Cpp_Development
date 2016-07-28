@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 const int MINNUMBER =-32767;
 int func(int x);
@@ -7,6 +8,7 @@ union{
 	int i;
 	char x[2];
 }a;
+int Keyboard_value(void);
 int main(void)
 {
 	int input,count,Array[10]={1,25,4,0,23,51,12,87,10,32},Sec_max;
@@ -19,6 +21,7 @@ int main(void)
 	cout << a.i << endl;
 	Sec_max=find_sec_max(Array,10);
 	cout << "The second max number of Array is :" << Sec_max << endl;
+	Keyboard_value();
 	return 0;
 }
 int func(int x) 
@@ -48,5 +51,17 @@ int find_sec_max( int data[] , int count)
 			sec_max = data[i] ;
 		}
 	}
-	return sec_max ;
+	return sec_max;
+}
+int Keyboard_value(void)
+{
+	string str[]={"Top","Bottom","Left","Right"};
+	int values[4]={0};
+	for(int i=0;i<4;i++)
+	{
+		cout << "Please input the key " << str[i] << ":" ;
+		cin >> values[i];
+		cout << "The values of " << str[i] <<" key is equal to :" << values[i] << endl; 
+	}
+	return 0;
 }
